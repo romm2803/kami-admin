@@ -1,0 +1,30 @@
+body {
+    background-color: #243447;
+}
+
+
+.text-white {
+    color: white;
+}
+
+.button {
+    background-color: #192734;
+    color: white;
+    font-weight: 500;
+}
+
+.button:hover {
+    background-color: #22303c;
+    color: white;
+}
+
+#logo-img {
+    max-width: 60%;
+    height: auto;  
+    margin-bottom: 1.5rem;
+}
+
+
+.input-field{
+    padding: 10px;
+}
