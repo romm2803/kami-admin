@@ -1,0 +1,103 @@
+/* General body styling */
+body {
+    background-color: #15202b; /* Dark background */
+    font-family: Arial, sans-serif;
+}
+
+/* Header styling */
+.dashboard-header {
+    background-color: #15202b; /* Header background color */
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dashboard-header h1 {
+    color: white;
+    font-size: 1.5rem;
+    margin-left: 20px;
+}
+
+/* Container for form styling */
+.container {
+    background-color: #22303c; /* Light dark background */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Input and text area styling */
+input[type="file"],
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    background-color: #f8f9fa; /* Light background for inputs */
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+input[type="file"] {
+    color: #6c757d;
+}
+
+textarea {
+    height: 150px;
+}
+
+/* Button styling */
+button {
+    background-color: #28a745;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Section headings */
+h3 {
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* Success and Error messages */
+.alert {
+    font-size: 1.1rem;
+    padding: 10px;
+}
+
+.alert-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.alert-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Limited Edition checkbox styling */
+.form-check-label {
+    color: white;
+}
+
+/* Spacing and layout tweaks */
+.mt-2 {
+    margin-top: 10px;
+}
+
+.mt-3 {
+    margin-top: 20px;
+}
+
+.me-2 {
+    margin-right: 10px;
+}

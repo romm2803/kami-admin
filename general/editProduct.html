@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Product</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/edit-product-styles.css">
+    <script type="module" src="../scripts/editProduct.js" defer></script>
+</head>
+<body class="d-flex flex-column vh-100">
+    <header class="dashboard-header d-flex justify-content-between align-items-center">
+        <a href="../general/adminProducts.html" class="btn btn-light">Back</a>
+        <h1 class="text-white ms-auto me-3">Edit Product</h1>
+    </header>
+
+    <div class="container mt-5">
+        <h3 class="text-white">Image</h3>
+        <input type="file" class="form-control mb-2" id="imageUpload" accept="image/*">
+        <img id="productImage" src="" class="img-fluid mt-2" style="max-width: 200px; display: none;" alt="Product Image">
+
+        <h3 class="text-white mt-3">Description</h3>
+        <input type="text" class="form-control" id="prodName" placeholder="Enter product name...">
+        <textarea class="form-control mt-2" id="prodDesc" placeholder="Enter product description..."></textarea>
+
+        <h3 class="text-white mt-3">Classifications</h3>
+        <div class="d-flex align-items-center">
+            <select class="form-select me-2" id="catValue">
+                <option value="">Select Category</option>
+                <option value="Demon Slayer">Demon Slayer</option>
+                <option value="Dragon Ball Z">Dragon Ball Z</option>
+                <option value="My Hero Academia">My Hero Academia</option>
+                <option value="Naruto">Naruto</option>
+                <option value="One Piece">One Piece</option>
+                <option value="Others">Others</option>
+            </select>
+
+            <!-- Custom input field for "Others" category -->
+            <input type="text" class="form-control ms-2" id="customCategoryInput" placeholder="Enter custom category..." style="display: none; margin-right: 16px;">
+
+            <select class="form-select ms-2" id="typeValue">
+                <option value="">Select Type</option>
+                <option value="Loose">Loose</option>
+                <option value="BIB">BIB</option>
+                <option value="MIB">MIB</option>
+                <option value="MIC">MIC</option>
+                <option value="MISB">MISB</option>
+            </select>
+        </div>
+
+        <h3 class="text-white mt-3">Pricing</h3>
+        <input type="number" class="form-control" id="prodPrice" placeholder="Price in PHP">
+
+        <h3 class="text-white mt-3">Stock</h3>
+        <input type="number" class="form-control" id="quantity" placeholder="Enter quantity...">
+        <div class="form-check mt-2">
+            <input class="form-check-input" type="checkbox" id="isLimited" name="isLimited">
+            <label class="form-check-label text-white" for="isLimited">Limited Edition</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 mt-3" id="updateProductBtn">Update Product</button>
+
+        <div id="successMessage" class="alert alert-success mt-3 text-center" style="display: none;">Product updated successfully.</div>
+        <div id="errorMessage" class="alert alert-danger mt-3 text-center" style="display: none;">Error updating product.</div>
+    </div>
+</body>
+</html>

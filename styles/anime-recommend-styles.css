@@ -1,0 +1,128 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #15202b;
+    color: white;
+}
+
+/* Similar Anime Recommendations Section */
+.similar-anime-recommendations {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.similar-anime-recommendations h2 {
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.anime-recommendations-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px;
+}
+
+/* User-Based Recommendations */
+.user-based-recommendations {
+    margin-top: 40px;
+    text-align: left;
+}
+
+#animeCarousel {
+    max-width: 800px;
+    margin: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #fff;
+}
+
+.carousel-inner {
+    border-radius: 10px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.carousel-caption h5 {
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .anime-pair {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .anime-item {
+        width: 90%;
+        max-width: 250px;
+    }
+
+    .carousel-item img {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .anime-item {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .carousel-item img {
+        height: 250px;
+    }
+}
+
+/* Recommended Products Section */
+#recommendedProducts, #recommendedAnime {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.product-card, .anime-item {
+    background: #24282e;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid #fff;
+    transition: transform 0.2s ease-in-out;
+}
+
+.product-card:hover, .anime-item:hover {
+    transform: scale(1.05);
+}
+
+.product-card img, .anime-item img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.product-card p, .anime-item p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #fff;
+    text-transform: uppercase;
+}

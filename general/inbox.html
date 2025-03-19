@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inbox</title>
+    <link rel="stylesheet" href="../styles/inbox-styles.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="sidebar">
+            <button class="back-button" onclick="window.location.href='../general/admin-dashboard.html'">&larr; Back</button>
+            <div class="user-list" id="userList">
+                <h3>Users</h3>
+                <div class="chat-header" id="chatHeader">Select a user</div>
+                <ul id="users"></ul>
+                
+            </div>
+        </div>
+        <div class="chat-box">
+            <div class="messages" id="chatContainer">No conversation</div>
+            <div class="message-input">
+                <input type="text" id="messageInput" placeholder="Type a message...">
+                <button id="sendButton">Send</button>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="../scripts/inbox.js"></script>
+</body>
+</html>

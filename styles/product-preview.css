@@ -1,0 +1,88 @@
+/* Ensure the modal is centered */
+.product-modal {
+    display: none;
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 400px !important;
+    max-width: 90% !important;
+    background: #222 !important;
+    color: white !important;
+    padding: 20px !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
+    z-index: 1000 !important;
+    text-align: center !important;
+}
+
+/* Ensure the product image displays properly */
+.product-modal-content img {
+    width: 100% !important;
+    max-height: 250px !important;
+    object-fit: cover !important;
+    border-radius: 5px !important;
+    margin-bottom: 15px !important;
+}
+
+/* Fix close button */
+.product-close-btn {
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    background: none !important;
+    border: none !important;
+    color: white !important;
+    font-size: 24px !important;
+    cursor: pointer !important;
+    transition: color 0.3s ease !important;
+}
+
+.product-close-btn:hover {
+    color: red !important;
+}
+
+/* Fix likes container */
+.product-likes-container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-top: 10px !important;
+    font-size: 18px !important;
+}
+
+/* Ensure heart icon appears correctly */
+.product-heart-icon {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.product-heart-icon::before {
+    content: "❤" !important;
+    font-size: 20px !important;
+    color: red !important;
+    margin-right: 5px !important;
+}
+
+/* Ensure likes count is visible */
+.product-likes-count {
+    font-size: 18px !important;
+}
+
+/* Modal Overlay */
+.product-modal-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    display: none !important;
+    z-index: 999 !important;
+}
+
+/* Ensure overlay is visible when modal is open */
+.product-modal.show,
+.product-modal-overlay.show {
+    display: block !important;
+}
