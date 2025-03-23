@@ -91,6 +91,8 @@ function initializeEventListeners() {
 }
 
 // Function to move order to the next phase
+import { updateProductStock } from "../scripts/updStock.js";
+
 async function moveOrderToNextStage(orderId, currentCollection) {
     const statusFlow = ["Orders", "toProcess", "toPrepare", "toShip", "Completed"];
     const statusLabels = {
@@ -116,10 +118,26 @@ async function moveOrderToNextStage(orderId, currentCollection) {
             await deleteDoc(orderRef);
 
             console.log(`Order moved to ${nextCollection} with status: ${orderData.status}`);
+
+            // Ensure items exist before updating stock
+            if (nextCollection === "Completed" && Array.isArray(orderData.items)) {
+                for (const item of orderData.items) {
+                    const quantity = item.totalSelectedQuantity ?? 1;
+                    if (item.id && Number.isInteger(quantity) && quantity > 0) {
+                        await updateProductStock(item.id, quantity);
+                    } else {
+                        console.error("Invalid product ID or quantity", item);
+                    }
+                }
+            }
+
             loadOrders();
         }
     }
 }
+
+
+
 
 // Voucher Handling
 const voucherForm = document.getElementById("voucherForm");

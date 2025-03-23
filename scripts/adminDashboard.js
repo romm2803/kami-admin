@@ -15,6 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (modal) modal.style.display = "none";
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    window.closePreviewModal = function () {
+        const modal = document.getElementById("productPreviewModal");
+        if (modal) modal.style.display = "none";
+    };
+});
 
 async function fetchProducts() {
     try {
@@ -191,7 +197,7 @@ function setupPreviewButtons(products) {
                 document.getElementById("previewPriceYen").textContent = `¥${product.priceYen || "0"}`;
                 document.getElementById("previewStock").textContent = product.quantity || "0";
                 document.getElementById("previewImage").src = product.imageBase64 || product.localImage || "../assets/gianflex.png";
-                document.getElementById("previewLikes").innerHTML = `<span style="color: red;">❤️</span> ${product.likes || 0}`;
+                document.getElementById("previewLikes").innerHTML = `<span style="color: red;"></span> ${product.likes || 0}`;
 
                 modal.style.display = "block";
             } else {
@@ -202,23 +208,30 @@ function setupPreviewButtons(products) {
 }
 
 // Close Preview Modal
-function closePreviewModal() {
+window.closePreviewModal = function () {
     const modal = document.getElementById("productPreviewModal");
     if (modal) modal.style.display = "none";
-}
+};
+
+
+// Ensure function is globally available
+window.closePreviewModal = closePreviewModal;
 
 // Close modal when clicking outside content or close button
 document.addEventListener("click", (event) => {
     const modal = document.getElementById("productPreviewModal");
-    const modalContent = document.querySelector("#productPreviewModal .modal-content");
-    if (!modalContent) return; 
-    if (event.target.classList.contains("close-btn") || (modal && event.target === modal && !modalContent.contains(event.target))) {
+    const modalContent = modal?.querySelector(".product-modal-content");
+
+    if (!modal || !modalContent) return; 
+
+    if (
+        event.target.classList.contains("product-close-btn") || 
+        (event.target === modal && !modalContent.contains(event.target))
+    ) {
         closePreviewModal();
     }
 });
 
-// Expose function globally
-window.closePreviewModal = closePreviewModal;
 
 function setupSearch(products) {
     const searchInput = document.getElementById("productSearch");
